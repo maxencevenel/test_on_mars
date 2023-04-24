@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_on_mars/counter/counter.dart';
+import 'package:test_on_mars/core/locator.dart';
 import 'package:test_on_mars/l10n/l10n.dart';
+import 'package:test_on_mars/presentation/routes/routes.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,7 +17,14 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      routes: Routes.routes,
+      // home: const CounterPage(),
     );
   }
+}
+
+Future<void> initialize() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  initLocator();
 }
