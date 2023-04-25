@@ -4,4 +4,6 @@ part of 'article_bloc.dart';
 class ArticleEvent with _$ArticleEvent {
   const factory ArticleEvent.getArticlesEvent() = GetArticlesEvent;
 
+  const factory ArticleEvent.getArticleByIdEvent(String id) =
+      GetArticleByIdEvent;
 }

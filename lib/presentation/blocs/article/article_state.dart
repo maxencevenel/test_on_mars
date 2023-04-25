@@ -17,5 +17,6 @@ class ArticleState with _$ArticleState {
   const factory ArticleState({
     @Default(ArticleStatus.initial) ArticleStatus status,
     @Default([]) List<Article> articles,
+    Article? selectedArticle,
   }) = _Initial;
 }

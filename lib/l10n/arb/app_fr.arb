@@ -6,5 +6,6 @@
     },
     "loadArticlesError": "Une erreur est survenue lors du téléchargement des articles",
     "loadArticlesErrorTryAgain": "Réessayer",
-    "readMore": "En savoir plus"
+    "readMore": "En savoir plus",
+    "anErrorOccurred": "Une erreur est survenue"
 }

@@ -18,6 +18,8 @@ class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
       await event.map(
         getArticlesEvent: (GetArticlesEvent event) async =>
             await _getArticles(emit),
+        getArticleByIdEvent: (GetArticleByIdEvent event) =>
+            _getArticleById(event, emit),
       );
     });
   }
@@ -34,5 +36,14 @@ class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
       ),
       (error) => emit(state.copyWith(status: ArticleStatus.error)),
     );
+  }
+
+  FutureOr<void> _getArticleById(
+    GetArticleByIdEvent event,
+    Emitter<ArticleState> emit,
+  ) {
+    final currentArticle =
+        state.articles.firstWhere((element) => element.id == event.id);
+    emit(state.copyWith(selectedArticle: currentArticle));
   }
 }

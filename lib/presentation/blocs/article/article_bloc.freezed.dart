@@ -19,32 +19,38 @@ mixin _$ArticleEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getArticlesEvent,
+    required TResult Function(String id) getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getArticlesEvent,
+    TResult? Function(String id)? getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getArticlesEvent,
+    TResult Function(String id)? getArticleByIdEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getArticlesEvent,
+    required TResult Function(String id) getArticleByIdEvent,
   }) {
     return getArticlesEvent();
   }
@@ -115,6 +122,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getArticlesEvent,
+    TResult? Function(String id)? getArticleByIdEvent,
   }) {
     return getArticlesEvent?.call();
   }
@@ -123,6 +131,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getArticlesEvent,
+    TResult Function(String id)? getArticleByIdEvent,
     required TResult orElse(),
   }) {
     if (getArticlesEvent != null) {
@@ -135,6 +144,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
   }) {
     return getArticlesEvent(this);
   }
@@ -143,6 +153,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
   }) {
     return getArticlesEvent?.call(this);
   }
@@ -151,6 +162,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
     required TResult orElse(),
   }) {
     if (getArticlesEvent != null) {
@@ -165,9 +177,144 @@ abstract class GetArticlesEvent implements ArticleEvent {
 }
 
 /// @nodoc
+abstract class _$$GetArticleByIdEventCopyWith<$Res> {
+  factory _$$GetArticleByIdEventCopyWith(_$GetArticleByIdEvent value,
+          $Res Function(_$GetArticleByIdEvent) then) =
+      __$$GetArticleByIdEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$GetArticleByIdEventCopyWithImpl<$Res>
+    extends _$ArticleEventCopyWithImpl<$Res, _$GetArticleByIdEvent>
+    implements _$$GetArticleByIdEventCopyWith<$Res> {
+  __$$GetArticleByIdEventCopyWithImpl(
+      _$GetArticleByIdEvent _value, $Res Function(_$GetArticleByIdEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetArticleByIdEvent(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetArticleByIdEvent implements GetArticleByIdEvent {
+  const _$GetArticleByIdEvent(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'ArticleEvent.getArticleByIdEvent(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetArticleByIdEvent &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetArticleByIdEventCopyWith<_$GetArticleByIdEvent> get copyWith =>
+      __$$GetArticleByIdEventCopyWithImpl<_$GetArticleByIdEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getArticlesEvent,
+    required TResult Function(String id) getArticleByIdEvent,
+  }) {
+    return getArticleByIdEvent(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getArticlesEvent,
+    TResult? Function(String id)? getArticleByIdEvent,
+  }) {
+    return getArticleByIdEvent?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getArticlesEvent,
+    TResult Function(String id)? getArticleByIdEvent,
+    required TResult orElse(),
+  }) {
+    if (getArticleByIdEvent != null) {
+      return getArticleByIdEvent(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
+  }) {
+    return getArticleByIdEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
+  }) {
+    return getArticleByIdEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
+    required TResult orElse(),
+  }) {
+    if (getArticleByIdEvent != null) {
+      return getArticleByIdEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetArticleByIdEvent implements ArticleEvent {
+  const factory GetArticleByIdEvent(final String id) = _$GetArticleByIdEvent;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$GetArticleByIdEventCopyWith<_$GetArticleByIdEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ArticleState {
   ArticleStatus get status => throw _privateConstructorUsedError;
   List<Article> get articles => throw _privateConstructorUsedError;
+  Article? get selectedArticle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ArticleStateCopyWith<ArticleState> get copyWith =>
@@ -180,7 +327,10 @@ abstract class $ArticleStateCopyWith<$Res> {
           ArticleState value, $Res Function(ArticleState) then) =
       _$ArticleStateCopyWithImpl<$Res, ArticleState>;
   @useResult
-  $Res call({ArticleStatus status, List<Article> articles});
+  $Res call(
+      {ArticleStatus status, List<Article> articles, Article? selectedArticle});
+
+  $ArticleCopyWith<$Res>? get selectedArticle;
 }
 
 /// @nodoc
@@ -198,6 +348,7 @@ class _$ArticleStateCopyWithImpl<$Res, $Val extends ArticleState>
   $Res call({
     Object? status = null,
     Object? articles = null,
+    Object? selectedArticle = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -208,7 +359,23 @@ class _$ArticleStateCopyWithImpl<$Res, $Val extends ArticleState>
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>,
+      selectedArticle: freezed == selectedArticle
+          ? _value.selectedArticle
+          : selectedArticle // ignore: cast_nullable_to_non_nullable
+              as Article?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ArticleCopyWith<$Res>? get selectedArticle {
+    if (_value.selectedArticle == null) {
+      return null;
+    }
+
+    return $ArticleCopyWith<$Res>(_value.selectedArticle!, (value) {
+      return _then(_value.copyWith(selectedArticle: value) as $Val);
+    });
   }
 }
 
@@ -220,7 +387,11 @@ abstract class _$$_InitialCopyWith<$Res>
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ArticleStatus status, List<Article> articles});
+  $Res call(
+      {ArticleStatus status, List<Article> articles, Article? selectedArticle});
+
+  @override
+  $ArticleCopyWith<$Res>? get selectedArticle;
 }
 
 /// @nodoc
@@ -235,6 +406,7 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? articles = null,
+    Object? selectedArticle = freezed,
   }) {
     return _then(_$_Initial(
       status: null == status
@@ -245,6 +417,10 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value._articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>,
+      selectedArticle: freezed == selectedArticle
+          ? _value.selectedArticle
+          : selectedArticle // ignore: cast_nullable_to_non_nullable
+              as Article?,
     ));
   }
 }
@@ -254,7 +430,8 @@ class __$$_InitialCopyWithImpl<$Res>
 class _$_Initial implements _Initial {
   const _$_Initial(
       {this.status = ArticleStatus.initial,
-      final List<Article> articles = const []})
+      final List<Article> articles = const [],
+      this.selectedArticle})
       : _articles = articles;
 
   @override
@@ -270,8 +447,11 @@ class _$_Initial implements _Initial {
   }
 
   @override
+  final Article? selectedArticle;
+
+  @override
   String toString() {
-    return 'ArticleState(status: $status, articles: $articles)';
+    return 'ArticleState(status: $status, articles: $articles, selectedArticle: $selectedArticle)';
   }
 
   @override
@@ -280,12 +460,14 @@ class _$_Initial implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._articles, _articles));
+            const DeepCollectionEquality().equals(other._articles, _articles) &&
+            (identical(other.selectedArticle, selectedArticle) ||
+                other.selectedArticle == selectedArticle));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(_articles));
+  int get hashCode => Object.hash(runtimeType, status,
+      const DeepCollectionEquality().hash(_articles), selectedArticle);
 
   @JsonKey(ignore: true)
   @override
@@ -296,12 +478,16 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements ArticleState {
   const factory _Initial(
-      {final ArticleStatus status, final List<Article> articles}) = _$_Initial;
+      {final ArticleStatus status,
+      final List<Article> articles,
+      final Article? selectedArticle}) = _$_Initial;
 
   @override
   ArticleStatus get status;
   @override
   List<Article> get articles;
+  @override
+  Article? get selectedArticle;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

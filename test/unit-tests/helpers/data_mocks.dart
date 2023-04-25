@@ -38,7 +38,7 @@ const article1Json = """
 
 const List<Article> articles = [
   Article.article(
-    id: '64446673f103d',
+    id: article1Id,
     title: "Wouldn't Harm a Fly",
     excerpt:
         'It took him a while to realize that everything he decided not to change, he was actually choosing...',
@@ -58,10 +58,12 @@ const List<Article> articles = [
 ];
 
 const Article article1 = Article.article(
-  id: '64446673f103d',
+  id: article1Id,
   title: "Wouldn't Harm a Fly",
   excerpt:
       'It took him a while to realize that everything he decided not to change, he was actually choosing...',
   text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas imperdiet sapien, aliquam cursus est vehicula sit amet. Aliquam et eleifend quam. Vestibulum at congue lacus. Suspendisse tincidunt sagittis libero, vel iaculis nulla porta a. Curabitur ac urna nec velit suscipit commodo. Suspendisse potenti. Aliquam cursus velit ut est aliquam vehicula. Morbi tempus varius mi volutpat semper. Curabitur blandit, quam ut tristique vulputate, odio felis eleifend eros, at varius orci sapien non risus.',
 );
+
+const String article1Id = '64446673f103d';

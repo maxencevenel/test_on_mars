@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_on_mars/domain/entities/article.dart';
 import 'package:test_on_mars/l10n/l10n.dart';
 import 'package:test_on_mars/presentation/blocs/article/article_bloc.dart';
+import 'package:test_on_mars/presentation/views/article_detail/article_detail.dart';
 
 import 'package:test_on_mars/presentation/views/article_list/widgets/custom_tile.dart';
 
@@ -32,7 +33,10 @@ class ArticleTile extends StatelessWidget {
             width: double.infinity,
             child: FilledButton(
               onPressed: () {
-
+                context
+                    .read<ArticleBloc>()
+                    .add(ArticleEvent.getArticleByIdEvent(article.id));
+                Navigator.pushNamed(context, TextArticleDetailPage.route);
               },
               child: Text(
                 l10n.readMore,
