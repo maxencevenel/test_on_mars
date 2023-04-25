@@ -20,7 +20,10 @@ class PictureArticleDetailView extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 24),
             child: Column(
               children: [
-                CustomFadeInImageNetwork(url: article.picture.url),
+                Hero(
+                  tag: article.id,
+                  child: CustomFadeInImageNetwork(url: article.picture.url),
+                ),
                 const SizedBox(height: 16),
                 Text(
                   article.title,
