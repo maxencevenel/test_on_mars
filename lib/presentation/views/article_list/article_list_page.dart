@@ -1,6 +1,6 @@
-
-
 import 'package:flutter/material.dart';
+
+import 'package:test_on_mars/presentation/views/article_list/article_list_view.dart';
 
 class ArticleListPage extends StatelessWidget {
   const ArticleListPage({super.key});
@@ -9,13 +9,6 @@ class ArticleListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MonFlux'),
-      ),
-      body: const Center(
-        child: Text('ArticleListPage'),
-      ),
-    );
+    return const ArticleListView();
   }
 }

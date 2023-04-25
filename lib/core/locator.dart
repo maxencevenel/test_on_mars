@@ -4,6 +4,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:test_on_mars/data/data_sources/data_sources.dart';
 import 'package:test_on_mars/data/repositories/repositories.dart';
 import 'package:test_on_mars/domain/domain.dart';
+import 'package:test_on_mars/presentation/blocs/article/article_bloc.dart';
 
 final getIt = GetIt.instance;
 
@@ -12,6 +13,13 @@ void initLocator() {
   initDataSources();
   initRepositories();
   initUseCases();
+  initBlocs();
+}
+
+void initBlocs() {
+  getIt.registerFactory<ArticleBloc>(
+    () => ArticleBloc(getArticlesUseCase: getIt()),
+  );
 }
 
 void initPackages() {

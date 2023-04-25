@@ -1,0 +1,10 @@
+{
+    "@@locale": "fr",
+    "homepageAppBarTitle": "Mon Flux",
+    "@homepageAppBarTitle": {
+        "description": "Le titre de la AppBar de la homepage"
+    },
+    "loadArticlesError": "Une erreur est survenue lors du téléchargement des articles",
+    "loadArticlesErrorTryAgain": "Réessayer",
+    "readMore": "En savoir plus"
+}
