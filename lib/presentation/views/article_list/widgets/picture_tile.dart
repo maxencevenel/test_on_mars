@@ -37,8 +37,9 @@ class PictureTile extends StatelessWidget {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(8)),
               child: Hero(
-                  tag: article.id,
-                  child: CustomFadeInImageNetwork(url: article.picture.url)),
+                tag: article.id,
+                child: CustomFadeInImageNetwork(url: article.picture.url),
+              ),
             ),
           ),
           const SizedBox(height: 10),

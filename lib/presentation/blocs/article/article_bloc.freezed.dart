@@ -19,18 +19,21 @@ mixin _$ArticleEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getArticlesEvent,
+    required TResult Function() getMoreArticlesEvent,
     required TResult Function(String id) getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getArticlesEvent,
+    TResult? Function()? getMoreArticlesEvent,
     TResult? Function(String id)? getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getArticlesEvent,
+    TResult Function()? getMoreArticlesEvent,
     TResult Function(String id)? getArticleByIdEvent,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$ArticleEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetMoreArticlesEvent value) getMoreArticlesEvent,
     required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
     required TResult orElse(),
   }) =>
@@ -113,6 +119,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getArticlesEvent,
+    required TResult Function() getMoreArticlesEvent,
     required TResult Function(String id) getArticleByIdEvent,
   }) {
     return getArticlesEvent();
@@ -122,6 +129,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getArticlesEvent,
+    TResult? Function()? getMoreArticlesEvent,
     TResult? Function(String id)? getArticleByIdEvent,
   }) {
     return getArticlesEvent?.call();
@@ -131,6 +139,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getArticlesEvent,
+    TResult Function()? getMoreArticlesEvent,
     TResult Function(String id)? getArticleByIdEvent,
     required TResult orElse(),
   }) {
@@ -144,6 +153,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetMoreArticlesEvent value) getMoreArticlesEvent,
     required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
   }) {
     return getArticlesEvent(this);
@@ -153,6 +163,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
   }) {
     return getArticlesEvent?.call(this);
@@ -162,6 +173,7 @@ class _$GetArticlesEvent implements GetArticlesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
     required TResult orElse(),
   }) {
@@ -174,6 +186,114 @@ class _$GetArticlesEvent implements GetArticlesEvent {
 
 abstract class GetArticlesEvent implements ArticleEvent {
   const factory GetArticlesEvent() = _$GetArticlesEvent;
+}
+
+/// @nodoc
+abstract class _$$GetMoreArticlesEventCopyWith<$Res> {
+  factory _$$GetMoreArticlesEventCopyWith(_$GetMoreArticlesEvent value,
+          $Res Function(_$GetMoreArticlesEvent) then) =
+      __$$GetMoreArticlesEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetMoreArticlesEventCopyWithImpl<$Res>
+    extends _$ArticleEventCopyWithImpl<$Res, _$GetMoreArticlesEvent>
+    implements _$$GetMoreArticlesEventCopyWith<$Res> {
+  __$$GetMoreArticlesEventCopyWithImpl(_$GetMoreArticlesEvent _value,
+      $Res Function(_$GetMoreArticlesEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetMoreArticlesEvent implements GetMoreArticlesEvent {
+  const _$GetMoreArticlesEvent();
+
+  @override
+  String toString() {
+    return 'ArticleEvent.getMoreArticlesEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetMoreArticlesEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getArticlesEvent,
+    required TResult Function() getMoreArticlesEvent,
+    required TResult Function(String id) getArticleByIdEvent,
+  }) {
+    return getMoreArticlesEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getArticlesEvent,
+    TResult? Function()? getMoreArticlesEvent,
+    TResult? Function(String id)? getArticleByIdEvent,
+  }) {
+    return getMoreArticlesEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getArticlesEvent,
+    TResult Function()? getMoreArticlesEvent,
+    TResult Function(String id)? getArticleByIdEvent,
+    required TResult orElse(),
+  }) {
+    if (getMoreArticlesEvent != null) {
+      return getMoreArticlesEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetMoreArticlesEvent value) getMoreArticlesEvent,
+    required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
+  }) {
+    return getMoreArticlesEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
+    TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
+  }) {
+    return getMoreArticlesEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
+    TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
+    required TResult orElse(),
+  }) {
+    if (getMoreArticlesEvent != null) {
+      return getMoreArticlesEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMoreArticlesEvent implements ArticleEvent {
+  const factory GetMoreArticlesEvent() = _$GetMoreArticlesEvent;
 }
 
 /// @nodoc
@@ -242,6 +362,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getArticlesEvent,
+    required TResult Function() getMoreArticlesEvent,
     required TResult Function(String id) getArticleByIdEvent,
   }) {
     return getArticleByIdEvent(id);
@@ -251,6 +372,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getArticlesEvent,
+    TResult? Function()? getMoreArticlesEvent,
     TResult? Function(String id)? getArticleByIdEvent,
   }) {
     return getArticleByIdEvent?.call(id);
@@ -260,6 +382,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getArticlesEvent,
+    TResult Function()? getMoreArticlesEvent,
     TResult Function(String id)? getArticleByIdEvent,
     required TResult orElse(),
   }) {
@@ -273,6 +396,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetArticlesEvent value) getArticlesEvent,
+    required TResult Function(GetMoreArticlesEvent value) getMoreArticlesEvent,
     required TResult Function(GetArticleByIdEvent value) getArticleByIdEvent,
   }) {
     return getArticleByIdEvent(this);
@@ -282,6 +406,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult? Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult? Function(GetArticleByIdEvent value)? getArticleByIdEvent,
   }) {
     return getArticleByIdEvent?.call(this);
@@ -291,6 +416,7 @@ class _$GetArticleByIdEvent implements GetArticleByIdEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetArticlesEvent value)? getArticlesEvent,
+    TResult Function(GetMoreArticlesEvent value)? getMoreArticlesEvent,
     TResult Function(GetArticleByIdEvent value)? getArticleByIdEvent,
     required TResult orElse(),
   }) {

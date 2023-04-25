@@ -6,8 +6,21 @@ import 'package:test_on_mars/presentation/blocs/article/article_bloc.dart';
 import 'package:test_on_mars/presentation/themes/app_theme.dart';
 import 'package:test_on_mars/presentation/views/article_list/article_list.dart';
 
-class ArticleListView extends StatelessWidget {
+class ArticleListView extends StatefulWidget {
   const ArticleListView({super.key});
+
+  @override
+  State<ArticleListView> createState() => _ArticleListViewState();
+}
+
+class _ArticleListViewState extends State<ArticleListView> {
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +45,12 @@ class ArticleListView extends StatelessWidget {
                   .add(const ArticleEvent.getArticlesEvent());
             },
             child: ListView.builder(
-              itemCount: state.articles.length,
+              controller: _scrollController,
+              itemCount: state.articles.length + 1,
               itemBuilder: (context, index) {
+                if (index >= state.articles.length) {
+                  return const Center(child: CircularProgressIndicator());
+                }
                 final article = state.articles[index];
                 return article.when(
                   article: (id, title, excerpt, text) =>
@@ -47,5 +64,28 @@ class ArticleListView extends StatelessWidget {
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController
+      ..removeListener(_onScroll)
+      ..dispose();
+    super.dispose();
+  }
+
+  void _onScroll() {
+    if (_isBottom) {
+      context
+          .read<ArticleBloc>()
+          .add(const ArticleEvent.getMoreArticlesEvent());
+    }
+  }
+
+  bool get _isBottom {
+    if (!_scrollController.hasClients) return false;
+    final maxScroll = _scrollController.position.maxScrollExtent;
+    final currentScroll = _scrollController.offset;
+    return currentScroll >= (maxScroll * 0.9);
   }
 }
