@@ -2,8 +2,8 @@ import 'package:test_on_mars/app.dart';
 import 'package:test_on_mars/bootstrap.dart';
 
 
-void main(){
-  initialize();
+Future<void> main() async {
+  await initialize();
 
-  bootstrap(() => const App());
+  await bootstrap(() => const App());
 }

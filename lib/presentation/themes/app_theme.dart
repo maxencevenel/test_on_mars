@@ -22,11 +22,19 @@ abstract class AppTheme {
         .copyWith(color: bodyTextColor),
   );
 
-  static ThemeData theme = ThemeData().copyWith(
+  static ThemeData lightTheme = ThemeData().copyWith(
     useMaterial3: true,
+    brightness: Brightness.light,
     colorScheme: ColorScheme.fromSwatch(
       accentColor: const Color(0xFF13B9FF),
-    ).copyWith(background: Colors.white),
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+      titleTextStyle: textTheme.titleLarge!.copyWith(
+        color: Colors.black,
+      ),
+    ),
     scaffoldBackgroundColor: backgroundColor,
     primaryColor: Colors.white,
     textTheme: textTheme,
@@ -39,6 +47,22 @@ abstract class AppTheme {
                 fontSize: 14,
               ),
         ),
+      ),
+    ),
+  );
+
+  static ThemeData darkTheme = lightTheme.copyWith(
+    brightness: Brightness.dark,
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.black.withOpacity(0.8),
+      foregroundColor: Colors.white,
+      titleTextStyle: textTheme.titleLarge!.copyWith(
+        color: Colors.white,
+      ),
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all(Colors.white),
       ),
     ),
   );

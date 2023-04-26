@@ -1,15 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:test_on_mars/data/data_sources/data_sources.dart';
 import 'package:test_on_mars/data/repositories/repositories.dart';
 import 'package:test_on_mars/domain/domain.dart';
-import 'package:test_on_mars/presentation/blocs/article/article_bloc.dart';
+import 'package:test_on_mars/presentation/blocs/blocs.dart';
 
 final getIt = GetIt.instance;
 
-void initLocator() {
-  initPackages();
+Future<void> initLocator() async {
+  await initPackages();
   initDataSources();
   initRepositories();
   initUseCases();
@@ -17,12 +19,20 @@ void initLocator() {
 }
 
 void initBlocs() {
-  getIt.registerFactory<ArticleBloc>(
-    () => ArticleBloc(getArticlesUseCase: getIt()),
-  );
+  getIt
+    .registerFactory<ArticleBloc>(
+      () => ArticleBloc(getArticlesUseCase: getIt()),
+    );
+    getIt.registerFactory<AppearanceCubit>(
+        () => AppearanceCubit(),
+    );
 }
 
-void initPackages() {
+Future<void> initPackages() async {
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: await getTemporaryDirectory(),
+  );
+
   final dio =
       Dio(BaseOptions(baseUrl: 'https://interview-dev.teachonmars.com'));
 

@@ -19,12 +19,12 @@ void main() {
     articleBloc = ArticleBloc(getArticlesUseCase: mockGetArticlesUseCase);
   });
 
-  test('Initial state is BurgerState', () {
+  test('Initial state is ArticleState', () {
     expect(articleBloc.state, const ArticleState());
   });
 
   blocTest<ArticleBloc, ArticleState>(
-    'GetBurgersEvent return BurgerState with success status and burger list when success',
+    'GetArticlesUseCase return ArticleState with success status and article list when success',
     setUp: () {
       when(() => mockGetArticlesUseCase())
           .thenAnswer((_) async => const Success(articles));
@@ -40,7 +40,7 @@ void main() {
   );
 
   blocTest<ArticleBloc, ArticleState>(
-    'GetBurgersEvent return BurgerState with success status and burger list when success',
+    'GetArticlesUseCase return ArticleState with error status when failure',
     setUp: () {
       when(() => mockGetArticlesUseCase())
           .thenAnswer((_) async => Error(ServerFailure()));
@@ -56,7 +56,7 @@ void main() {
   );
 
   blocTest<ArticleBloc, ArticleState>(
-    'GetBurgersEvent return BurgerState with success status and burger list when success',
+    'getArticleByIdEvent return ArticleState with success status and selectedArticle',
     setUp: () {
       when(() => mockGetArticlesUseCase())
           .thenAnswer((_) async => const Success(articles));

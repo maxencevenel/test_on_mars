@@ -5,6 +5,7 @@ import 'package:test_on_mars/l10n/l10n.dart';
 import 'package:test_on_mars/presentation/blocs/article/article_bloc.dart';
 import 'package:test_on_mars/presentation/themes/app_theme.dart';
 import 'package:test_on_mars/presentation/views/article_list/article_list.dart';
+import 'package:test_on_mars/presentation/views/settings/appearance/appearance.dart';
 
 class ArticleListView extends StatefulWidget {
   const ArticleListView({super.key});
@@ -30,6 +31,14 @@ class _ArticleListViewState extends State<ArticleListView> {
       appBar: AppBar(
         title: Text(l10n.homepageAppBarTitle),
         leading: const Icon(Icons.menu),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, AppearancePage.route);
+            },
+          ),
+        ],
       ),
       body: BlocBuilder<ArticleBloc, ArticleState>(
         builder: (context, state) {
