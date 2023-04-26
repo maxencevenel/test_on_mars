@@ -14,7 +14,7 @@ class PictureArticleDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Article'),
+        title: const Text('Image'),
       ),
       body: SingleChildScrollView(
         child: Padding(
