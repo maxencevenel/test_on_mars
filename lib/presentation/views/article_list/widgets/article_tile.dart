@@ -36,7 +36,7 @@ class ArticleTile extends StatelessWidget {
                 context
                     .read<ArticleBloc>()
                     .add(ArticleEvent.getArticleByIdEvent(article.id));
-                Navigator.pushNamed(context, TextArticleDetailPage.route);
+                Navigator.pushNamed(context, ArticleDetailPage.route);
               },
               child: Text(
                 l10n.readMore,

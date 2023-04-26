@@ -63,14 +63,13 @@ class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
     Emitter<ArticleState> emit,
   ) async {
     final result = await getArticlesUseCase();
-    result.when(
-      (articles) => emit(
+    if (result.isSuccess()) {
+      emit(
         state.copyWith(
-          articles: state.articles + articles,
+          articles: List.of(state.articles)..addAll(result.tryGetSuccess()!),
           status: ArticleStatus.loaded,
         ),
-      ),
-      (error) => null,
-    );
+      );
+    }
   }
 }

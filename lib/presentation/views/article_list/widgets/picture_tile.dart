@@ -21,7 +21,7 @@ class PictureTile extends StatelessWidget {
         context
             .read<ArticleBloc>()
             .add(ArticleEvent.getArticleByIdEvent(article.id));
-        Navigator.pushNamed(context, PictureArticleDetailPage.route);
+        Navigator.pushNamed(context, ArticleDetailPage.route);
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
